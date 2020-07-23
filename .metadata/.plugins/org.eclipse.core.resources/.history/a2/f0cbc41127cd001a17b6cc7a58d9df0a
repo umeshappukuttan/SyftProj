@@ -1,0 +1,59 @@
+import java.util.ArrayList;
+
+public class MultiplesOf3Or5 {
+
+	public static void main(String[] args) {
+		
+		//Sample Data Scenario with value 23
+		int belowvalue = 10;
+		Multipleof3or5(belowvalue);
+		
+		//Dataset Scenario with value 1000
+		belowvalue = 1000;
+		Multipleof3or5(belowvalue);
+	}
+	
+	public static void Multipleof3or5(int j) {
+
+		// TODO Auto-generated method stub
+		
+		ArrayList<Integer> a = new ArrayList<Integer>();
+        ArrayList<Integer> b = new ArrayList<Integer>();
+        int totalforthree = 0;
+        int totalforfive = 0;
+
+        int total =0;
+
+        for(int i =0; i < j ; i++){
+            if(i % 3 == 0){
+                a.add(i);
+                totalforthree += i;
+            }else if(i % 5 == 0){
+                b.add(i);
+                totalforfive += i;
+            }
+        }
+        
+        // Test Scenario 1
+        if (totalforthree % 3 == 0 )
+        {
+        	System.out.println("The Total for three is multiple by 3");
+        }else {
+        	System.out.println("The Total for three is NOT multiple by 3");
+        }
+        
+     // Test Scenario 2
+        if (totalforfive % 5 == 0 )
+        {
+        	System.out.println("The Total for five is multiple by 5");
+        }else {
+        	System.out.println("The Total for five is NOT multiple by 5");
+        }
+
+        total = totalforfive + totalforthree;
+
+        System.out.println("The sum of all the multiples of 3 or 5 below "+j+": " +total);
+		
+	}
+
+}
